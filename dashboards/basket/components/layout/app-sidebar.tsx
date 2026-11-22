@@ -1,9 +1,10 @@
 "use client";
 
-import { BarChart3, Boxes, CircleHelp, House, Megaphone, Play, Settings2, ShoppingCart, UsersRound, X } from "lucide-react";
+import { BarChart3, Boxes, CircleHelp, House, Megaphone, Settings2, ShoppingCart, UsersRound, X } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { BasketLogo } from "@/components/basket-logo";
 
 const navigation = [
   { label: "Dashboard", icon: House }, { label: "Orders", icon: ShoppingCart },
@@ -23,9 +24,7 @@ export function AppSidebar({ brand, active, onNavigate, open, onClose }: {
     {open && <button type="button" onClick={onClose} className="fixed inset-0 z-30 cursor-pointer bg-black/70 backdrop-blur-sm lg:hidden" aria-label="Close navigation" />}
     <aside data-open={open} className="fixed top-4 bottom-4 left-4 z-40 flex h-[calc(100dvh---spacing(8))] min-h-0 w-56 flex-col overflow-y-auto rounded-3xl bg-sidebar p-3.5 transition-[translate,visibility] duration-180 ease-in-out max-lg:data-[open=false]:invisible max-lg:data-[open=false]:-translate-x-[calc(100%+--spacing(8))] motion-reduce:transition-none lg:sticky lg:bottom-auto lg:left-auto lg:w-full lg:max-xl:top-3.5 lg:max-xl:h-[calc(100dvh---spacing(7))]" aria-label="Main navigation">
       <Link href="/" className="mb-6 flex h-9 items-center gap-2.5 px-1.5 text-base font-semibold tracking-tight">
-        <span className="flex size-8 items-center justify-center rounded-lg bg-primary shadow-lg shadow-primary/10">
-          <Play className="ml-0.5 size-5 fill-current text-white" strokeWidth={0} aria-hidden="true" />
-        </span>
+        <BasketLogo className="size-7 -translate-y-0.5 shrink-0 text-primary" />
         {brand}
       </Link>
       <Button variant="ghost" size="icon-lg" className="absolute top-3 right-2 text-sidebar-foreground lg:hidden" onClick={onClose} aria-label="Close menu"><X className="size-6" /></Button>
