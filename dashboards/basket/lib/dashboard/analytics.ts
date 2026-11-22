@@ -2,9 +2,8 @@ import { addDays, addMonths, formatDate, monthStart, parseDate, type DateRange }
 import type { CountrySales, DailyAnalytics, Metric, Product, SalesPoint } from "./types";
 
 import { distribute } from "./distribute";
+import { aggregateOrderHeatmap, orderHours } from "./order-heatmap";
 
-export const orderDays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-export const orderHours = ["9 am", "10 am", "11 am", "12 pm", "1 pm", "2 pm", "3 pm"];
 export type SalesInterval = "Hourly" | "Daily" | "Weekly" | "Monthly";
 
 function totals(records: DailyAnalytics[]) {
@@ -41,11 +40,7 @@ export function aggregateDashboard(records: DailyAnalytics[], range: DateRange, 
     change: previousValues[metric.id] ? Math.round((values[metric.id] / previousValues[metric.id] - 1) * 1_000) / 10 : null,
   }));
 
-  const heatmap = orderHours.map(() => orderDays.map(() => 0));
-  for (const record of selected) {
-    const weekday = (parseDate(record.date).getUTCDay() + 6) % 7;
-    record.ordersByHour.forEach((orders, hour) => { heatmap[hour][weekday] += orders; });
-  }
+  const heatmap = aggregateOrderHeatmap(selected, range, duration);
 
   const interval: SalesInterval = duration === 1 ? "Hourly" : duration <= 31 ? "Daily" : duration <= 90 ? "Weekly" : "Monthly";
   const points: SalesPoint[] = [];

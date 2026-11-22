@@ -27,7 +27,7 @@ export function Dashboard({ data }: { data: DashboardData }) {
       {analytics.metrics.map(metric => <MetricCard key={metric.id} metric={metric} />)}
     </section>
     <section aria-label="Sales and order analytics" className="mt-4 grid grid-cols-1 gap-4 xl:mt-6 xl:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] xl:gap-6">
-      <OrdersHeatmap values={analytics.heatmap} hasData={analytics.hasData} />
+      <OrdersHeatmap data={analytics.heatmap} hasData={analytics.hasData} />
       <SalesChart data={analytics.points} interval={analytics.interval} />
     </section>
     <section aria-label="Country and product sales" className="mt-4 grid grid-cols-1 gap-4 xl:mt-6 xl:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] xl:gap-6">
