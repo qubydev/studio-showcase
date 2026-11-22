@@ -1,0 +1,167 @@
+{
+  "brand": "Basket",
+  "user": {
+    "name": "Alex Morgan",
+    "email": "alex.morgan@example.com",
+    "initials": "AM",
+    "role": "Store administrator"
+  },
+  "date": "2024-05-29",
+  "period": {
+    "start": "2024-06-01",
+    "end": "2024-06-29"
+  },
+  "metrics": [
+    {
+      "id": "revenue",
+      "label": "Total Revenue",
+      "value": 24500,
+      "format": "currency",
+      "change": 12.5
+    },
+    {
+      "id": "orders",
+      "label": "Total Order",
+      "value": 1240,
+      "format": "number",
+      "change": 8.2
+    },
+    {
+      "id": "customers",
+      "label": "New customer",
+      "value": 320,
+      "format": "number",
+      "change": -4.3
+    },
+    {
+      "id": "conversion",
+      "label": "Conversion rate",
+      "value": 3.2,
+      "format": "percent",
+      "change": 1.2
+    }
+  ],
+  "countries": [
+    {
+      "code": "GB",
+      "name": "United Kingdom",
+      "products": 6300
+    },
+    {
+      "code": "ID",
+      "name": "Indonesia",
+      "products": 5200
+    },
+    {
+      "code": "MY",
+      "name": "Malaysia",
+      "products": 4700
+    },
+    {
+      "code": "CN",
+      "name": "China",
+      "products": 4500
+    },
+    {
+      "code": "TH",
+      "name": "Thailand",
+      "products": 3200
+    },
+    {
+      "code": "PH",
+      "name": "Philippines",
+      "products": 2900
+    },
+    {
+      "code": "US",
+      "name": "United States",
+      "products": 2600
+    },
+    {
+      "code": "DE",
+      "name": "Germany",
+      "products": 2100
+    },
+    {
+      "code": "JP",
+      "name": "Japan",
+      "products": 1800
+    }
+  ],
+  "products": [
+    {
+      "id": "p1",
+      "name": "MagStand Pro 1",
+      "revenue": 24500,
+      "sales": 846,
+      "growth": 32,
+      "reviews": 570,
+      "views": 978
+    },
+    {
+      "id": "p2",
+      "name": "MagStand Pro 2",
+      "revenue": 16300,
+      "sales": 598,
+      "growth": 26,
+      "reviews": 385,
+      "views": 945
+    },
+    {
+      "id": "p3",
+      "name": "MagStand Pro 3",
+      "revenue": 12980,
+      "sales": 389,
+      "growth": 13,
+      "reviews": 127,
+      "views": 437
+    },
+    {
+      "id": "p4",
+      "name": "MagStand Pro 4",
+      "revenue": 10984,
+      "sales": 265,
+      "growth": -11,
+      "reviews": 190,
+      "views": 265
+    },
+    {
+      "id": "p5",
+      "name": "MagStand Mini",
+      "revenue": 8450,
+      "sales": 224,
+      "growth": 18,
+      "reviews": 98,
+      "views": 312
+    },
+    {
+      "id": "p6",
+      "name": "MagStand Studio",
+      "revenue": 6200,
+      "sales": 156,
+      "growth": 9,
+      "reviews": 74,
+      "views": 210
+    }
+  ],
+  "notifications": [
+    {
+      "id": "n1",
+      "title": "Your weekly report is ready",
+      "detail": "Revenue is up 12.5% compared with the previous period.",
+      "time": "5 min ago"
+    },
+    {
+      "id": "n2",
+      "title": "A new milestone",
+      "detail": "MagStand Pro 1 has reached 800 sales this month.",
+      "time": "1 hour ago"
+    },
+    {
+      "id": "n3",
+      "title": "Welcome to Basket",
+      "detail": "Your store overview is ready to explore.",
+      "time": "Yesterday"
+    }
+  ]
+}
