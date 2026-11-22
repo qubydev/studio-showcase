@@ -9,6 +9,8 @@ import { CountrySales } from "./country-sales";
 import { ProductSales } from "./product-sales";
 import { useTimeline } from "@/hooks/use-timeline";
 import { aggregateDashboard } from "@/lib/dashboard/analytics";
+import { formatRange } from "@/lib/date-range";
+import { Badge } from "@/components/ui/badge";
 import type { Section } from "@/components/layout/app-sidebar";
 import type { DashboardData } from "@/lib/dashboard/types";
 
@@ -23,6 +25,9 @@ export function Dashboard({ data }: { data: DashboardData }) {
   return <DashboardShell selectedRange={range} onRangeChange={setRange} data={data} query={query} onQueryChange={setQuery} active={active} onNavigate={section => { setActive(section); setQuery(""); }}>
     <h1 className="sr-only">{active}</h1>
     {active === "Dashboard" && <>
+    <div className="mb-4 flex justify-center sm:hidden" aria-live="polite">
+      <Badge className="bg-muted px-2.5 py-1.5 text-muted-foreground">{formatRange(range)}</Badge>
+    </div>
     <section aria-label="Store overview" className="grid grid-cols-2 gap-3 sm:gap-4 xl:grid-cols-4 xl:gap-6">
       {analytics.metrics.map(metric => <MetricCard key={metric.id} metric={metric} />)}
     </section>

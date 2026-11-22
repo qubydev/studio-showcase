@@ -3,8 +3,7 @@
 import { useEffect, useState, type ReactNode } from "react";
 import { AppSidebar, type Section } from "./app-sidebar";
 import { AppTopbar } from "./app-topbar";
-import { formatRange, type DateRange } from "@/lib/date-range";
-import { Badge } from "@/components/ui/badge";
+import type { DateRange } from "@/lib/date-range";
 import type { DashboardData } from "@/lib/dashboard/types";
 
 export function DashboardShell({ data, query, onQueryChange, active, onNavigate, selectedRange, onRangeChange, children }: { data: DashboardData; query: string; onQueryChange: (value: string) => void; active: Section; onNavigate: (section: Section) => void; selectedRange: DateRange; onRangeChange: (range: DateRange) => void; children: ReactNode }) {
@@ -23,9 +22,6 @@ export function DashboardShell({ data, query, onQueryChange, active, onNavigate,
         <AppTopbar selectedRange={selectedRange} onRangeChange={onRangeChange} data={data} query={query} onQueryChange={onQueryChange} onMenu={() => setMenuOpen(true)} />
       </div>
       <main id="main-content" tabIndex={-1} className="flex-1 pt-4 outline-none">
-        <div className="mb-4 flex justify-center sm:hidden" aria-live="polite">
-          <Badge className="bg-muted px-2.5 py-1.5 text-muted-foreground">{formatRange(selectedRange)}</Badge>
-        </div>
         {children}
       </main>
     </div>
